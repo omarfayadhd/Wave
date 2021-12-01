@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -27,36 +25,12 @@ class LandingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(child: ListView(padding: EdgeInsets.symmetric(horizontal: 18.0),
-      children: <Widget>[
-        Column(
-          children: <Widget>[
-        SizedBox(height: 80,),
-        Text("Login", style: TextStyle(fontSize: 25,))
-      ],
-        ),
-        SizedBox(height: 60,),
-        TextField(
-          decoration: InputDecoration(
-            labelText: "Email",
-            labelStyle: TextStyle(fontSize: 20),
-            filled: true,
-          ) ,
-        ),
-        SizedBox(height: 20,),
-        TextField(
-          obscureText: true,
-          decoration: InputDecoration(
-            labelText: "Password",
-            labelStyle: TextStyle(fontSize: 20),
-            filled: true,
-          )
-        )
-
-      ],
-      ) 
-      ),
-      );
-    
+        backgroundColor: Colors.orange[200],
+        //appBar: AppBar(),
+        body: SafeArea(
+          child: Row(
+            children: [IconButton(onPressed: () {}, icon: Icon(Icons.home))],
+          ),
+        ));
   }
 }
