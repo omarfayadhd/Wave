@@ -25,16 +25,54 @@ class LandingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.orange[200],
-        //appBar: AppBar(),
+        backgroundColor: Colors.black12,
+        //bottomNavigationBar: AppBar(),
         body: SafeArea(
-          child: Row(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              IconButton(onPressed: () {}, icon: Icon(Icons.home)),
-              IconButton(
-                  onPressed: () {}, icon: Icon(Icons.playlist_add_check)),
-              IconButton(onPressed: () {}, icon: Icon(Icons.favorite)),
-              IconButton(onPressed: () {}, icon: Icon(Icons.menu)),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  IconButton(
+                    onPressed: () {},
+                    icon: Icon(Icons.home),
+                    color: Colors.white,
+                    iconSize: 30,
+                  ),
+                  IconButton(
+                    onPressed: () {},
+                    icon: Icon(Icons.play_arrow),
+                    iconSize: 30,
+                    color: Colors.blue,
+                    alignment: Alignment.bottomRight,
+                  ),
+                  IconButton(
+                    onPressed: () {},
+                    icon: Icon(Icons.celebration_rounded),
+                    color: Colors.red,
+                    iconSize: 30,
+                  ),
+                  IconButton(
+                    onPressed: () {},
+                    icon: Icon(Icons.menu_open),
+                    color: Colors.yellow,
+                    iconSize: 30,
+                    alignment: Alignment.topRight,
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  IconButton(
+                    onPressed: () {},
+                    icon: Icon(Icons.trending_up_outlined),
+                    color: Colors.white,
+                    iconSize: 30,
+                  ),
+                ],
+              )
             ],
           ),
         ));
