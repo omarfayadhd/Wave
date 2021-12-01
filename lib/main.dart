@@ -29,7 +29,13 @@ class LandingScreen extends StatelessWidget {
         //appBar: AppBar(),
         body: SafeArea(
           child: Row(
-            children: [IconButton(onPressed: () {}, icon: Icon(Icons.home))],
+            children: [
+              IconButton(onPressed: () {}, icon: Icon(Icons.home)),
+              IconButton(
+                  onPressed: () {}, icon: Icon(Icons.playlist_add_check)),
+              IconButton(onPressed: () {}, icon: Icon(Icons.favorite)),
+              IconButton(onPressed: () {}, icon: Icon(Icons.menu)),
+            ],
           ),
         ));
   }
