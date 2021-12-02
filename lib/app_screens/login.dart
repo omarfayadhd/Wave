@@ -23,10 +23,15 @@ class LoginScreen extends StatelessWidget{
             const SizedBox(
               height: 60,
             ),
-            const TextField(
+            TextField(
               decoration: InputDecoration(
                 labelText: "Email",
+                suffixIcon: Icon(Icons.email),
                 labelStyle: TextStyle(fontSize: 20),
+                border: OutlineInputBorder(
+                  borderRadius:
+                  BorderRadius.circular(20.0),
+                ),
                 filled: true,
               ),
             ),
@@ -38,28 +43,43 @@ class LoginScreen extends StatelessWidget{
                 decoration: InputDecoration(
                   labelText: "Password",
                   labelStyle: TextStyle(fontSize: 20),
+                  suffixIcon: Icon(Icons.visibility_off),
+                  border: OutlineInputBorder(
+                  borderRadius:
+                  BorderRadius.circular(20.0),
+                ),
                   filled: true,
                 )),
             SizedBox(
               height: 20,
             ),
-            Column(
-              children: <Widget>[
-                ButtonTheme(
-                  height: 50,
-                  disabledColor: Colors.blueAccent,
-                  child: ElevatedButton(
-                    onPressed: () {},
-                    child: Text('Login',
-                        style: TextStyle(fontSize: 20, color: Colors.white)),
-                  ),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                Text("New User? Sign Up")
-              ],
-            )
+
+          Padding(padding: const EdgeInsets.all(10.0),
+          child: Row(
+            mainAxisAlignment:MainAxisAlignment.spaceBetween,
+            children: [Text('Forget Password?', style:TextStyle(fontSize: 18.0, color: Colors.red),),
+            ElevatedButton(
+              child: Text('Login'),
+              onPressed: () {},
+               style:  ButtonStyle(
+                foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
+        backgroundColor: MaterialStateProperty.all<Color>(Colors.orange),
+                 shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                   RoundedRectangleBorder(
+                     borderRadius: BorderRadius.circular(18.0),
+                    
+                   ),
+                 ),
+               ), 
+              
+              ),
+            ],
+          ),
+
+          ),
+          SizedBox(height: 20.0),
+          Text("Dont have an account? SignUp", 
+          textAlign: TextAlign.center,)
           ],
         ),
       );
