@@ -1,8 +1,8 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'app_screens/login.dart';
+import 'app_screens/wav.dart';
+import 'app_screens/signup.dart';
 
 main() {
   runApp(Wave());
@@ -14,6 +14,7 @@ class Wave extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primaryColor: Colors.black,
       ),
@@ -27,8 +28,6 @@ class LandingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: LoginScreen()
-    );
-  }//gghg
+    return Scaffold(body: SignUp());
+  }
 }
