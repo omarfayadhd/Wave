@@ -13,28 +13,27 @@ class _SignUpState extends State<SignUp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.black,
         body: Padding(
             padding: EdgeInsets.symmetric(horizontal: 18.0),
             child: SingleChildScrollView(
                 child: Column(children: [
               SizedBox(
-                height: 80,
+                height: 180,
               ),
               Text(
                 'Create New Account',
                 style: TextStyle(
                     fontSize: 28,
-                    color: Colors.white,
+                    color: Colors.green,
                     fontWeight: FontWeight.bold),
               ),
               const SizedBox(
-                height: 60,
+                height: 30,
               ),
               TextField(
                 style: TextStyle(color: Colors.white),
                 decoration: InputDecoration(
-                  fillColor: Color(0xFF262A34),
+                  // fillColor: Colors.white,
                   labelText: "Email",
                   hintText: "info@gmail.com",
                   suffixIcon: Icon(Icons.email),
@@ -51,10 +50,8 @@ class _SignUpState extends State<SignUp> {
               TextField(
                 style: TextStyle(color: Colors.white),
                 decoration: InputDecoration(
-                  fillColor: Color(0xFF262A34),
                   labelText: "Username",
-                  //hintText: "info@gmail.com",
-                  // suffixIcon: Icon(Icons.email),
+                  suffixIcon: Icon(Icons.person),
                   labelStyle: TextStyle(fontSize: 20),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(20.0),
@@ -65,11 +62,10 @@ class _SignUpState extends State<SignUp> {
               const SizedBox(
                 height: 30,
               ),
-              TextField(
+              TextFormField(
                   style: TextStyle(color: Colors.white),
                   obscureText: true,
                   decoration: InputDecoration(
-                    fillColor: Color(0xFF262A34),
                     labelText: "Password",
                     labelStyle: TextStyle(fontSize: 20),
                     suffixIcon: Icon(Icons.visibility_off),
@@ -85,7 +81,6 @@ class _SignUpState extends State<SignUp> {
                   style: TextStyle(color: Colors.white),
                   obscureText: true,
                   decoration: InputDecoration(
-                    fillColor: Color(0xFF262A34),
                     labelText: "Confirm Password",
                     labelStyle: TextStyle(fontSize: 20),
                     suffixIcon: Icon(Icons.visibility_off),
@@ -98,19 +93,21 @@ class _SignUpState extends State<SignUp> {
                 height: 20,
               ),
               ElevatedButton(
-                child: Text('Login'),
+                child: Text('Signup'),
                 onPressed: () {
                   Navigator.of(context).push(
                       MaterialPageRoute(builder: (context) => LoginScreen()));
                 },
                 style: ButtonStyle(
+                  fixedSize:
+                      MaterialStateProperty.all<Size>(Size.fromWidth(80)),
                   foregroundColor:
                       MaterialStateProperty.all<Color>(Colors.white),
                   backgroundColor:
                       MaterialStateProperty.all<Color>(Colors.blue),
                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                     RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(18.0),
+                      borderRadius: BorderRadius.circular(50.0),
                     ),
                   ),
                 ),

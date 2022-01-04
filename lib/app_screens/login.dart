@@ -1,4 +1,5 @@
 import 'dart:ui';
+import 'package:flutter/gestures.dart';
 import 'package:wave_dev/app_screens/signup.dart';
 import 'package:flutter/material.dart';
 import 'package:wave_dev/app_screens/land.dart';
@@ -8,11 +9,10 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const Color blackTextFild = Color(0xFF262A34);
     FocusNode myFocusNode = new FocusNode();
     FocusNode myFocusNode1 = new FocusNode();
     return Scaffold(
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.white,
         body: SafeArea(
           child: ListView(
             padding: const EdgeInsets.symmetric(horizontal: 18.0),
@@ -25,7 +25,7 @@ class LoginScreen extends StatelessWidget {
                   Text("Login",
                       style: TextStyle(
                           fontSize: 28,
-                          color: Colors.white,
+                          color: Colors.blue,
                           fontWeight: FontWeight.bold))
                 ],
               ),
@@ -33,17 +33,16 @@ class LoginScreen extends StatelessWidget {
                 height: 60,
               ),
               TextField(
-                focusNode: myFocusNode1,
-                style: TextStyle(color: Colors.white),
+                // focusNode: myFocusNode1,
+                style: TextStyle(color: Colors.blue),
                 decoration: InputDecoration(
-                  fillColor: Color(0xFF262A34),
+                  //fillColor: Color(0xFF262A34),
                   labelText: "Email",
                   hintText: "info@gmail.com",
                   suffixIcon: Icon(Icons.email),
                   labelStyle: TextStyle(
                       fontSize: 15,
-                      color:
-                          myFocusNode1.hasFocus ? Colors.blue : Colors.white),
+                      color: myFocusNode1.hasFocus ? Colors.blue : Colors.blue),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(20.0),
                   ),
@@ -54,16 +53,16 @@ class LoginScreen extends StatelessWidget {
                 height: 20,
               ),
               TextField(
-                  focusNode: myFocusNode,
-                  style: TextStyle(color: Colors.white),
+                  //focusNode: myFocusNode,
+                  style: TextStyle(color: Colors.blue),
                   obscureText: true,
                   decoration: InputDecoration(
-                    fillColor: Color(0xFF262A34),
+                    //  fillColor: Color(0xFF262A34),
                     labelText: "Password",
                     labelStyle: TextStyle(
                         fontSize: 15,
                         color:
-                            myFocusNode.hasFocus ? Colors.blue : Colors.white),
+                            myFocusNode.hasFocus ? Colors.blue : Colors.blue),
                     suffixIcon: Icon(Icons.visibility_off),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(20.0),
@@ -105,14 +104,31 @@ class LoginScreen extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 20.0),
-              Text(
+              /*Text(
                 "Dont have an account?",
-                style: TextStyle(fontSize: 12.0, color: Colors.white),
+                style: TextStyle(fontSize: 12.0, color: Colors.black),
                 textAlign: TextAlign.center,
-              ),
-              SizedBox(
-                height: 20,
-                width: 20,
+              ),*/
+              RichText(
+                  textAlign: TextAlign.center,
+                  text: TextSpan(
+                    style: TextStyle(color: Colors.black),
+                    text: "Don't have an account, ",
+                    children: <TextSpan>[
+                      TextSpan(
+                          text: 'SignUp?',
+                          style: TextStyle(color: Colors.blue),
+                          recognizer: TapGestureRecognizer()
+                            ..onTap = () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => SignUp()),
+                              );
+                            }),
+                    ],
+                  )),
+              /* SizedBox(
                 child: ElevatedButton(
                   child: Text('SignUp'),
                   onPressed: () {
@@ -122,7 +138,8 @@ class LoginScreen extends StatelessWidget {
                   style: ButtonStyle(
                     foregroundColor:
                         MaterialStateProperty.all<Color>(Colors.blue),
-                    backgroundColor: MaterialStateProperty.all(Colors.black),
+                    backgroundColor:
+                        MaterialStateProperty.all(Colors.transparent),
                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20.0),
@@ -130,7 +147,7 @@ class LoginScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-              ),
+              ),*/
             ],
           ),
         ));
