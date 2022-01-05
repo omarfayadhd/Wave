@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:wave_dev/model/user_model.dart';
 
+//jhikhkh
 class SignUp extends StatefulWidget {
   const SignUp({Key? key}) : super(key: key);
 
