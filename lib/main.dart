@@ -5,6 +5,7 @@ import 'app_screens/login.dart';
 import 'app_screens/wav.dart';
 import 'app_screens/signup.dart';
 
+//uyguyguyuyguy
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
