@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:wave_dev/app_screens/land.dart';
+import 'package:wave_dev/app_screens/login.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:wave_dev/model/user_model.dart';
 
@@ -182,7 +184,6 @@ class _SignUpState extends State<SignUp> {
     );
 
     return Scaffold(
-<<<<<<< HEAD
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -275,8 +276,8 @@ class _SignUpState extends State<SignUp> {
   }
 
   postDetailsToFirestore() async {
-    // calling  firestore
-    // calling  user model
+    // calling our firestore
+    // calling our user model
     // sedning these values
 
     FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
@@ -298,107 +299,122 @@ class _SignUpState extends State<SignUp> {
 
     Navigator.pushAndRemoveUntil((context),
         MaterialPageRoute(builder: (context) => land()), (route) => false);
-=======
-        body: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 18.0),
-            child: SingleChildScrollView(
-                child: Column(children: [
-              SizedBox(
-                height: 180,
-              ),
-              Text(
-                'Create New Account',
-                style: TextStyle(
-                    fontSize: 28,
-                    color: Colors.green,
-                    fontWeight: FontWeight.bold),
-              ),
-              const SizedBox(
-                height: 30,
-              ),
-              TextField(
-                style: TextStyle(color: Colors.white),
-                decoration: InputDecoration(
-                  // fillColor: Colors.white,
-                  labelText: "Email",
-                  hintText: "info@gmail.com",
-                  suffixIcon: Icon(Icons.email),
-                  labelStyle: TextStyle(fontSize: 20),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(20.0),
-                  ),
-                  filled: true,
-                ),
-              ),
-              const SizedBox(
-                height: 30,
-              ),
-              TextField(
-                style: TextStyle(color: Colors.white),
-                decoration: InputDecoration(
-                  labelText: "Username",
-                  suffixIcon: Icon(Icons.person),
-                  labelStyle: TextStyle(fontSize: 20),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(20.0),
-                  ),
-                  filled: true,
-                ),
-              ),
-              const SizedBox(
-                height: 30,
-              ),
-              TextFormField(
-                  style: TextStyle(color: Colors.white),
-                  obscureText: true,
-                  decoration: InputDecoration(
-                    labelText: "Password",
-                    labelStyle: TextStyle(fontSize: 20),
-                    suffixIcon: Icon(Icons.visibility_off),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20.0),
-                    ),
-                    filled: true,
-                  )),
-              SizedBox(
-                height: 20,
-              ),
-              TextField(
-                  style: TextStyle(color: Colors.white),
-                  obscureText: true,
-                  decoration: InputDecoration(
-                    labelText: "Confirm Password",
-                    labelStyle: TextStyle(fontSize: 20),
-                    suffixIcon: Icon(Icons.visibility_off),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20.0),
-                    ),
-                    filled: true,
-                  )),
-              SizedBox(
-                height: 20,
-              ),
-              ElevatedButton(
-                child: Text('Signup'),
-                onPressed: () {
-                  Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => LoginScreen()));
-                },
-                style: ButtonStyle(
-                  fixedSize:
-                      MaterialStateProperty.all<Size>(Size.fromWidth(80)),
-                  foregroundColor:
-                      MaterialStateProperty.all<Color>(Colors.white),
-                  backgroundColor:
-                      MaterialStateProperty.all<Color>(Colors.blue),
-                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                    RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(50.0),
-                    ),
-                  ),
-                ),
-              ),
-            ]))));
->>>>>>> b13d7ab39552522ba9e9712cb2c2712f1e062398
   }
 }
+// class SignUp extends StatefulWidget {
+//   const SignUp({Key? key}) : super(key: key);
+
+//   @override
+//   _SignUpState createState() => _SignUpState();
+// }
+
+// class _SignUpState extends State<SignUp> {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//         backgroundColor: Colors.black,
+//         body: Padding(
+//             padding: EdgeInsets.symmetric(horizontal: 18.0),
+//             child: SingleChildScrollView(
+//                 child: Column(children: [
+//               const SizedBox(
+//                 height: 80,
+//               ),
+//               // ignore: prefer_const_constructors
+//               Text(
+//                 'Create New Account',
+//                 style: const TextStyle(
+//                     fontSize: 28,
+//                     color: Colors.white,
+//                     fontWeight: FontWeight.bold),
+//               ),
+//               const SizedBox(
+//                 height: 60,
+//               ),
+//               TextField(
+//                 style: TextStyle(color: Colors.white),
+//                 decoration: InputDecoration(
+//                   fillColor: Color(0xFF262A34),
+//                   labelText: "Email",
+//                   hintText: "info@gmail.com",
+//                   suffixIcon: Icon(Icons.email),
+//                   labelStyle: TextStyle(fontSize: 20),
+//                   border: OutlineInputBorder(
+//                     borderRadius: BorderRadius.circular(20.0),
+//                   ),
+//                   filled: true,
+//                 ),
+//               ),
+//               const SizedBox(
+//                 height: 30,
+//               ),
+//               TextField(
+//                 style: TextStyle(color: Colors.white),
+//                 decoration: InputDecoration(
+//                   fillColor: Color(0xFF262A34),
+//                   labelText: "Username",
+//                   //hintText: "info@gmail.com",
+//                   // suffixIcon: Icon(Icons.email),
+//                   labelStyle: TextStyle(fontSize: 20),
+//                   border: OutlineInputBorder(
+//                     borderRadius: BorderRadius.circular(20.0),
+//                   ),
+//                   filled: true,
+//                 ),
+//               ),
+//               const SizedBox(
+//                 height: 30,
+//               ),
+//               TextField(
+//                   style: TextStyle(color: Colors.white),
+//                   obscureText: true,
+//                   decoration: InputDecoration(
+//                     fillColor: Color(0xFF262A34),
+//                     labelText: "Password",
+//                     labelStyle: TextStyle(fontSize: 20),
+//                     suffixIcon: Icon(Icons.visibility_off),
+//                     border: OutlineInputBorder(
+//                       borderRadius: BorderRadius.circular(20.0),
+//                     ),
+//                     filled: true,
+//                   )),
+//               SizedBox(
+//                 height: 20,
+//               ),
+//               TextField(
+//                   style: TextStyle(color: Colors.white),
+//                   obscureText: true,
+//                   decoration: InputDecoration(
+//                     fillColor: Color(0xFF262A34),
+//                     labelText: "Confirm Password",
+//                     labelStyle: TextStyle(fontSize: 20),
+//                     suffixIcon: Icon(Icons.visibility_off),
+//                     border: OutlineInputBorder(
+//                       borderRadius: BorderRadius.circular(20.0),
+//                     ),
+//                     filled: true,
+//                   )),
+//               SizedBox(
+//                 height: 20,
+//               ),
+//               ElevatedButton(
+//                 child: Text('Login'),
+//                 onPressed: () {
+//                   Navigator.of(context).push(
+//                       MaterialPageRoute(builder: (context) => LoginScreen()));
+//                 },
+//                 style: ButtonStyle(
+//                   foregroundColor:
+//                       MaterialStateProperty.all<Color>(Colors.white),
+//                   backgroundColor:
+//                       MaterialStateProperty.all<Color>(Colors.blue),
+//                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+//                     RoundedRectangleBorder(
+//                       borderRadius: BorderRadius.circular(18.0),
+//                     ),
+//                   ),
+//                 ),
+//               ),
+//             ]))));
+//   }
+// }
