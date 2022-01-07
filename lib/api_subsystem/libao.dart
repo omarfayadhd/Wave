@@ -4,7 +4,7 @@ import 'dart:typed_data';
 import 'package:libao/libao.dart';
 
 void main() {
-  final ao = Libao.open();
+  final ao = Libao.open('assets/op1.mp3');
 
   ao.initialize();
 

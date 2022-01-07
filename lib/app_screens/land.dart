@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-
+import 'package:wave_dev/app_screens/Profile.dart';
 //uihiuhuhuh
 
 class land extends StatelessWidget {
@@ -83,7 +83,9 @@ class land extends StatelessWidget {
                         hoverColor: Colors.transparent,
                       ),
                       IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          _popup(context);
+                        },
                         icon: Icon(Icons.menu_open),
                         color: Colors.yellow,
                         iconSize: 30,
@@ -99,5 +101,109 @@ class land extends StatelessWidget {
             ),
           ],
         )));
+  }
+
+  void _popup(context) {
+    showModalBottomSheet(
+        backgroundColor: Colors.black12,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+        context: context,
+        builder: (BuildContext bc) {
+          return Container(
+              margin: EdgeInsets.only(left: 20, top: 20, right: 20, bottom: 0),
+              height: MediaQuery.of(context).size.height * .30,
+              child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    children: <Widget>[
+                      Row(
+                        children: <Widget>[
+                          IconButton(
+                            icon: Icon(
+                              Icons.person_outline,
+                              size: 25,
+                              color: Colors.white,
+                            ),
+                            onPressed: () {},
+                          ),
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => profileView()));
+                            },
+                            child: Text("My Account",
+                                style: TextStyle(
+                                    fontSize: 20.0,
+                                    fontFamily: 'Lora',
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white)),
+                          )
+                        ],
+                      ),
+                      SizedBox(
+                        height: 5,
+                      ),
+                      Row(
+                        children: <Widget>[
+                          IconButton(
+                            icon: Icon(
+                              Icons.settings,
+                              size: 25,
+                              color: Colors.white,
+                            ),
+                            onPressed: () {},
+                          ),
+                          Text("Settings",
+                              style: TextStyle(
+                                  fontSize: 20.0,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white)),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 5,
+                      ),
+                      Row(
+                        children: <Widget>[
+                          IconButton(
+                            icon: const Icon(
+                              Icons.info,
+                              size: 25,
+                              color: Colors.white,
+                            ),
+                            onPressed: () {},
+                          ),
+                          Text("About",
+                              style: TextStyle(
+                                  fontSize: 20.0,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white)),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 5,
+                      ),
+                      Row(
+                        children: <Widget>[
+                          IconButton(
+                            icon: Icon(
+                              Icons.logout,
+                              size: 25,
+                              color: Colors.white,
+                            ),
+                            onPressed: () {},
+                          ),
+                          const Text("Logout",
+                              style: TextStyle(
+                                  fontSize: 20.0,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white)),
+                        ],
+                      ),
+                    ],
+                  )));
+        });
   }
 }
