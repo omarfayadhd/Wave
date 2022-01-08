@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:wave_dev/app_screens/login.dart';
 import 'package:wave_dev/model/user_model.dart';
+import 'package:wave_dev/app_screens/Profile.dart';
 
 class land extends StatefulWidget {
   const land({Key? key}) : super(key: key);
@@ -237,8 +238,6 @@ class _landState extends State<land> {
                   )));
         });
   }
-
-  profileView() {}
 }
 
 // the logout function
