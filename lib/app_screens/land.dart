@@ -105,7 +105,7 @@ class land extends StatelessWidget {
 
   void _popup(context) {
     showModalBottomSheet(
-        backgroundColor: Colors.black12,
+        backgroundColor: Colors.black,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         context: context,
         builder: (BuildContext bc) {
