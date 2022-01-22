@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:wave_dev/app_screens/audio_page.dart';
 import 'package:wave_dev/app_screens/login.dart';
 import 'package:wave_dev/model/user_model.dart';
 import 'package:wave_dev/app_screens/Profile.dart';
@@ -89,7 +90,10 @@ class _landState extends State<land> {
                         iconSize: 30,
                       ),
                       IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => Audio_Page()));
+                        },
                         icon: Icon(Icons.play_arrow),
                         iconSize: 30,
                         splashColor: Colors.transparent,

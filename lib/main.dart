@@ -13,9 +13,14 @@ Future<void> main() async {
   runApp(Wave());
 }
 
-class Wave extends StatelessWidget {
+class Wave extends StatefulWidget {
   const Wave({Key? key}) : super(key: key);
 
+  @override
+  _WaveState createState() => _WaveState();
+}
+
+class _WaveState extends State<Wave> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -28,9 +33,16 @@ class Wave extends StatelessWidget {
   }
 }
 
-class LandingScreen extends StatelessWidget {
+//////////////////////
+
+class LandingScreen extends StatefulWidget {
   const LandingScreen({Key? key}) : super(key: key);
 
+  @override
+  _LandingScreenState createState() => _LandingScreenState();
+}
+
+class _LandingScreenState extends State<LandingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(body: LoginScreen());
