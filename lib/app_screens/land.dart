@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:wave_dev/app_screens/audio_page.dart';
+import 'package:wave_dev/app_screens/creative.dart';
 import 'package:wave_dev/app_screens/login.dart';
 import 'package:wave_dev/model/user_model.dart';
 import 'package:wave_dev/app_screens/Profile.dart';
@@ -103,7 +104,10 @@ class _landState extends State<land> {
                         alignment: Alignment.bottomRight,
                       ),
                       IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => creative()));
+                        },
                         icon: Icon(Icons.celebration_rounded),
                         color: Colors.red,
                         iconSize: 30,
