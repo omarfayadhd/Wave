@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) => MaterialApp(
         debugShowCheckedModeBanner: false,
         title: title,
-        theme: ThemeData(primarySwatch: Colors.green),
+        theme: ThemeData(primarySwatch: Colors.indigo),
         home: MainPage(),
       );
 }
@@ -35,8 +35,8 @@ class _MainPageState extends State<MainPage> {
     final fileName = file != null ? basename(file!.path) : 'No File Selected';
 
     return Scaffold(
+      backgroundColor: Color.fromRGBO(58, 66, 86, 1.0),
       appBar: AppBar(
-        backgroundColor: Colors.black12,
         title: Text(MyApp.title),
         centerTitle: true,
       ),
@@ -72,7 +72,8 @@ class _MainPageState extends State<MainPage> {
   }
 
   Future selectFile() async {
-    final result = await FilePicker.platform.pickFiles(allowMultiple: false);
+    final result = await FilePicker.platform
+        .pickFiles(type: FileType.audio, allowMultiple: false);
 
     if (result == null) return;
     final path = result.files.single.path!;

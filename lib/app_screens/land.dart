@@ -7,6 +7,7 @@ import 'package:wave_dev/app_screens/creative.dart';
 import 'package:wave_dev/app_screens/login.dart';
 import 'package:wave_dev/model/user_model.dart';
 import 'package:wave_dev/app_screens/Profile.dart';
+import 'package:wave_dev/app_screens/listpage.dart';
 
 class land extends StatefulWidget {
   const land({Key? key}) : super(key: key);
@@ -106,7 +107,7 @@ class _landState extends State<land> {
                       IconButton(
                         onPressed: () {
                           Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => creative()));
+                              builder: (context) => ListPage()));
                         },
                         icon: Icon(Icons.celebration_rounded),
                         color: Colors.red,
