@@ -5,11 +5,8 @@ import 'package:wave_dev/app_screens/audio_page.dart';
 import 'package:wave_dev/app_screens/creative.dart';
 import 'package:wave_dev/app_screens/login.dart';
 import 'package:wave_dev/app_screens/Profile.dart';
-<<<<<<< Updated upstream
 import 'package:wave_dev/app_screens/listpage.dart';
-=======
 import 'package:wave_dev/app_screens/tabs.dart';
->>>>>>> Stashed changes
 
 class land extends StatefulWidget {
   const land({Key? key}) : super(key: key);
@@ -109,19 +106,6 @@ class _landState extends State<land> with SingleTickerProviderStateMixin {
                       SizedBox(
                         height: 20,
                       ),
-<<<<<<< Updated upstream
-                      IconButton(
-                        onPressed: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => ListPage()));
-                        },
-                        icon: Icon(Icons.celebration_rounded),
-                        color: Colors.red,
-                        iconSize: 30,
-                        splashColor: Colors.transparent,
-                        highlightColor: Colors.transparent,
-                        hoverColor: Colors.transparent,
-=======
                       Container(
                         height: 180,
                         child: Stack(children: [
@@ -154,7 +138,6 @@ class _landState extends State<land> with SingleTickerProviderStateMixin {
                                     }),
                               ))
                         ]),
->>>>>>> Stashed changes
                       ),
                       Expanded(
                           child: NestedScrollView(
@@ -369,7 +352,11 @@ class _landState extends State<land> with SingleTickerProviderStateMixin {
                                   alignment: Alignment.bottomRight,
                                 ),
                                 IconButton(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    Navigator.of(context).push(
+                                        MaterialPageRoute(
+                                            builder: (context) => ListPage()));
+                                  },
                                   icon: Icon(Icons.celebration_rounded),
                                   color: Colors.red,
                                   iconSize: 30,
