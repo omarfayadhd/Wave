@@ -197,97 +197,117 @@ class _landState extends State<land> with SingleTickerProviderStateMixin {
                             ListView.builder(
                                 itemCount: songs == null ? 0 : songs.length,
                                 itemBuilder: (_, i) {
-                                  return Container(
-                                    margin: const EdgeInsets.only(
-                                        left: 20,
-                                        right: 20,
-                                        top: 10,
-                                        bottom: 10),
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(10),
-                                          color: Colors.black26,
-                                          boxShadow: [
-                                            BoxShadow(
-                                              blurRadius: 2,
-                                              offset: Offset(0, 0),
-                                              color:
-                                                  Colors.grey.withOpacity(0.2),
-                                            )
-                                          ]),
+                                  return GestureDetector(
+                                      onTap: () {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    Audio_Page(
+                                                        audioData: songs,
+                                                        index: i)));
+                                      },
                                       child: Container(
-                                          padding: const EdgeInsets.all(8),
-                                          child: Row(
-                                            children: [
-                                              Container(
-                                                width: 90,
-                                                height: 120,
-                                                decoration: BoxDecoration(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            10),
-                                                    image: DecorationImage(
-                                                        image: AssetImage(
-                                                            songs[i]["img"]))),
-                                              ),
-                                              SizedBox(
-                                                width: 10,
-                                              ),
-                                              Column(
-                                                  crossAxisAlignment:
-                                                      CrossAxisAlignment.start,
-                                                  children: [
-                                                    Text(
-                                                      songs[i]["title"],
-                                                      style: TextStyle(
-                                                          color: Colors.white,
-                                                          fontFamily: "Avenir",
-                                                          fontWeight:
-                                                              FontWeight.bold,
-                                                          fontSize: 16),
-                                                    ),
-                                                    SizedBox(
-                                                      height: 5,
-                                                    ),
-                                                    Text(
-                                                      songs[i]["text"],
-                                                      style: TextStyle(
-                                                          color: Colors.white60,
-                                                          fontFamily: "Avenir",
-                                                          fontWeight:
-                                                              FontWeight.normal,
-                                                          fontSize: 13),
-                                                    ),
-                                                    SizedBox(
-                                                      height: 10,
-                                                    ),
-                                                    Container(
-                                                      width: 50,
-                                                      height: 20,
-                                                      decoration: BoxDecoration(
+                                        margin: const EdgeInsets.only(
+                                            left: 20,
+                                            right: 20,
+                                            top: 10,
+                                            bottom: 10),
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(10),
+                                              color: Colors.black26,
+                                              boxShadow: [
+                                                BoxShadow(
+                                                  blurRadius: 2,
+                                                  offset: Offset(0, 0),
+                                                  color: Colors.grey
+                                                      .withOpacity(0.2),
+                                                )
+                                              ]),
+                                          child: Container(
+                                              padding: const EdgeInsets.all(8),
+                                              child: Row(
+                                                children: [
+                                                  Container(
+                                                    width: 90,
+                                                    height: 120,
+                                                    decoration: BoxDecoration(
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(3),
-                                                        color: Colors.red,
-                                                      ),
-                                                      child: Text(
-                                                        "Genre",
-                                                        style: TextStyle(
-                                                            fontSize: 12,
-                                                            fontFamily:
-                                                                "Avenir",
-                                                            color:
-                                                                Colors.white),
-                                                      ),
-                                                      alignment:
-                                                          Alignment.center,
-                                                    )
-                                                  ])
-                                            ],
-                                          )),
-                                    ),
-                                  );
+                                                                .circular(10),
+                                                        image: DecorationImage(
+                                                            image: AssetImage(
+                                                                songs[i]
+                                                                    ["img"]))),
+                                                  ),
+                                                  SizedBox(
+                                                    width: 10,
+                                                  ),
+                                                  Column(
+                                                      crossAxisAlignment:
+                                                          CrossAxisAlignment
+                                                              .start,
+                                                      children: [
+                                                        Text(
+                                                          songs[i]["title"],
+                                                          style: TextStyle(
+                                                              color:
+                                                                  Colors.white,
+                                                              fontFamily:
+                                                                  "Avenir",
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .bold,
+                                                              fontSize: 16),
+                                                        ),
+                                                        SizedBox(
+                                                          height: 5,
+                                                        ),
+                                                        Text(
+                                                          songs[i]["text"],
+                                                          style: TextStyle(
+                                                              color: Colors
+                                                                  .white60,
+                                                              fontFamily:
+                                                                  "Avenir",
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .normal,
+                                                              fontSize: 13),
+                                                        ),
+                                                        SizedBox(
+                                                          height: 10,
+                                                        ),
+                                                        Container(
+                                                          width: 50,
+                                                          height: 20,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        3),
+                                                            color: Colors.red,
+                                                          ),
+                                                          child: Text(
+                                                            "Genre",
+                                                            style: TextStyle(
+                                                                fontSize: 12,
+                                                                fontFamily:
+                                                                    "Avenir",
+                                                                color: Colors
+                                                                    .white),
+                                                          ),
+                                                          alignment:
+                                                              Alignment.center,
+                                                        )
+                                                      ])
+                                                ],
+                                              )),
+                                        ),
+                                      ));
                                 }),
                             Material(
                               child: ListTile(
@@ -338,10 +358,11 @@ class _landState extends State<land> with SingleTickerProviderStateMixin {
                                 ),
                                 IconButton(
                                   onPressed: () {
-                                    Navigator.of(context).push(
+                                    /* Navigator.of(context).push(
                                         MaterialPageRoute(
                                             builder: (context) =>
-                                                Audio_Page()));
+                                     Audio_Page()));
+                                     */
                                   },
                                   icon: Icon(Icons.play_arrow),
                                   iconSize: 30,

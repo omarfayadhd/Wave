@@ -3,7 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:wave_dev/app_screens/audio_system.dart';
 
 class Audio_Page extends StatefulWidget {
-  const Audio_Page({Key? key}) : super(key: key);
+  final audioData;
+  final int index;
+  const Audio_Page({Key? key, this.audioData, required this.index})
+      : super(key: key);
 
   @override
   _Audio_PageState createState() => _Audio_PageState();
@@ -73,14 +76,14 @@ class _Audio_PageState extends State<Audio_Page> {
                       height: screenHeight * 0.1,
                     ),
                     Text(
-                      "STAND BY ME",
+                      this.widget.audioData[this.widget.index]["title"],
                       style: TextStyle(
                           fontSize: 30,
                           fontWeight: FontWeight.bold,
                           fontFamily: "Avenir"),
                     ),
                     Text(
-                      "Skylar Grey",
+                      this.widget.audioData[this.widget.index]["text"],
                       style: TextStyle(
                         fontSize: 15,
                       ),
@@ -107,7 +110,9 @@ class _Audio_PageState extends State<Audio_Page> {
                           shape: BoxShape.circle,
                           border: Border.all(color: Colors.white70, width: 5),
                           image: DecorationImage(
-                              image: AssetImage("assets/sbm.jpg"),
+                              image: AssetImage(this
+                                  .widget
+                                  .audioData[this.widget.index]["img"]),
                               fit: BoxFit.cover)),
                     ),
                   )))

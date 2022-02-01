@@ -5,7 +5,9 @@ import 'package:wave_dev/app_screens/audio_page.dart';
 
 class AusioSys extends StatefulWidget {
   final AudioPlayer wavePlayer;
-  const AusioSys({Key? key, required this.wavePlayer}) : super(key: key);
+  final String audioPath;
+  const AusioSys({Key? key, required this.wavePlayer, required this.audioPath})
+      : super(key: key);
 
   @override
   _AusioSysState createState() => _AusioSysState();
@@ -14,8 +16,6 @@ class AusioSys extends StatefulWidget {
 class _AusioSysState extends State<AusioSys> {
   Duration _duration = new Duration();
   Duration _position = new Duration();
-  final String path =
-      "https://firebasestorage.googleapis.com/v0/b/wave-190e5.appspot.com/o/Skylar%20Grey%20-%20Stand%20By%20Me%20(HQ)-320k.mp3?alt=media&token=19176014-1765-436a-a756-38e685dc7d1b";
   bool isPlaying = false;
   bool isPaused = false;
   bool isRepeat = false;
@@ -39,7 +39,7 @@ class _AusioSysState extends State<AusioSys> {
       });
     });
 
-    this.widget.wavePlayer.setUrl(path);
+    this.widget.wavePlayer.setUrl(this.widget.audioPath);
     this.widget.wavePlayer.onPlayerCompletion.listen((event) {
       setState(() {
         _position = Duration(seconds: 0);
@@ -67,7 +67,7 @@ class _AusioSysState extends State<AusioSys> {
             ),
       onPressed: () {
         if (isPlaying == false) {
-          this.widget.wavePlayer.play(path);
+          this.widget.wavePlayer.play(this.widget.audioPath);
           setState(() {
             isPlaying = true;
           });
