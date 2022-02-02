@@ -1,11 +1,12 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:wave_dev/app_screens/audio_system.dart';
+import 'audio_system.dart';
 
 class Audio_Page extends StatefulWidget {
-  final audioData;
+  final audioPath;
   final int index;
-  const Audio_Page({Key? key, this.audioData, required this.index})
+  const Audio_Page({Key? key, this.audioPath, required this.index})
       : super(key: key);
 
   @override
@@ -76,19 +77,22 @@ class _Audio_PageState extends State<Audio_Page> {
                       height: screenHeight * 0.1,
                     ),
                     Text(
-                      this.widget.audioData[this.widget.index]["title"],
+                      this.widget.audioPath[this.widget.index]["title"],
                       style: TextStyle(
                           fontSize: 30,
                           fontWeight: FontWeight.bold,
                           fontFamily: "Avenir"),
                     ),
                     Text(
-                      this.widget.audioData[this.widget.index]["text"],
+                      this.widget.audioPath[this.widget.index]["text"],
                       style: TextStyle(
                         fontSize: 15,
                       ),
                     ),
-                    AusioSys(wavePlayer: wavePlayer),
+                    AusioSys(
+                        wavePlayer: wavePlayer,
+                        audioPath: this.widget.audioPath[this.widget.index]
+                            ["audio"]),
                   ],
                 ),
               )),
@@ -112,7 +116,7 @@ class _Audio_PageState extends State<Audio_Page> {
                           image: DecorationImage(
                               image: AssetImage(this
                                   .widget
-                                  .audioData[this.widget.index]["img"]),
+                                  .audioPath[this.widget.index]["img"]),
                               fit: BoxFit.cover)),
                     ),
                   )))
