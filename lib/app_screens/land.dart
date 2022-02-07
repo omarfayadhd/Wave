@@ -7,6 +7,7 @@ import 'package:wave_dev/app_screens/login.dart';
 import 'package:wave_dev/app_screens/Profile.dart';
 import 'package:wave_dev/app_screens/listpage.dart';
 import 'package:wave_dev/app_screens/tabs.dart';
+import 'package:wave_dev/app_screens/about.dart';
 
 class land extends StatefulWidget {
   const land({Key? key}) : super(key: key);
@@ -477,11 +478,19 @@ class _landState extends State<land> with SingleTickerProviderStateMixin {
                             ),
                             onPressed: () {},
                           ),
-                          Text("About",
-                              style: TextStyle(
-                                  fontSize: 20.0,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white)),
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => AboutPage()));
+                            },
+                            child: const Text("About",
+                                style: TextStyle(
+                                    fontSize: 20.0,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white)),
+                          )
                         ],
                       ),
                       SizedBox(

@@ -1,8 +1,12 @@
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:wave_dev/app_screens/picking.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 FirebaseStorage storage = FirebaseStorage.instance;
+var audio = AudioPlayer();
+bool isPlaying = false;
+bool isPaused = false;
 
 class ListPage extends StatefulWidget {
   const ListPage({Key? key}) : super(key: key);
@@ -63,9 +67,9 @@ class _ListPageState extends State<ListPage> {
                         title: Text(image['name']),
                         subtitle: Text(image['description']),
                         trailing: IconButton(
-                          onPressed: () => {},
+                          onPressed: () => {_playing(image['url'])},
                           icon: const Icon(
-                            Icons.favorite_border,
+                            Icons.play_arrow,
                             color: Colors.red,
                           ),
                         ),
@@ -105,66 +109,7 @@ final topAppBar = AppBar(
     )
   ],
 );
-/*
-final makeBody = Container(
-    child: Expanded(
-        child: FutureBuilder(
-            future: _loadImages(),
-            builder:
-                (context, AsyncSnapshot<List<Map<String, dynamic>>> snapshot) {
-              if (snapshot.connectionState == ConnectionState.done) {
-                return ListView.builder(
-                    itemCount: snapshot.data?.length ?? 0,
-                    itemBuilder: (context, index) {
-                      final Map<String, dynamic> image = snapshot.data![index];
-                      return Card(
-                        elevation: 8.0,
-                        margin: new EdgeInsets.symmetric(
-                            horizontal: 10.0, vertical: 6.0),
-                        child: Container(
-                          decoration: BoxDecoration(
-                              color: Color.fromRGBO(64, 75, 96, .9)),
-                          child: ListTile(
-                              contentPadding: EdgeInsets.symmetric(
-                                  horizontal: 20.0, vertical: 10.0),
-                              leading: Container(
-                                padding: EdgeInsets.only(right: 12.0),
-                                decoration: new BoxDecoration(
-                                    border: new Border(
-                                        right: new BorderSide(
-                                            width: 1.0,
-                                            color: Colors.white24))),
-                                child:
-                                    Icon(Icons.autorenew, color: Colors.white),
-                              ),
-                              title: Text(
-                                image['url'],
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                              // subtitle: Text("Intermediate", style: TextStyle(color: Colors.white)),
 
-                              subtitle: Row(
-                                children: <Widget>[
-                                  Icon(Icons.linear_scale,
-                                      color: Colors.yellowAccent),
-                                  Text(" Intermediate",
-                                      style: TextStyle(color: Colors.white))
-                                ],
-                              ),
-                              trailing: Icon(Icons.keyboard_arrow_right,
-                                  color: Colors.white, size: 30.0)),
-                        ),
-                      );
-                    });
-              }
-              return const Center(
-                child: CircularProgressIndicator(),
-              );
-            })));
-//final makeCard =
-*/
 Future<List<Map<String, dynamic>>> _loadImages() async {
   List<Map<String, dynamic>> files = [];
 
@@ -188,11 +133,9 @@ Future<List<Map<String, dynamic>>> _loadImages() async {
   return files;
 }
 
-/*ListView.builder(
-    scrollDirection: Axis.vertical,
-    shrinkWrap: true,
-    itemCount: 10,
-    itemBuilder: (BuildContext context, int index) {
-      return makeCard;
-    },
-  ), */
+_playing(String url) async {
+  if (isPlaying == false) {
+    audio.play(url);
+    isPlaying = true;
+  }
+}
