@@ -8,6 +8,7 @@ import 'package:wave_dev/app_screens/Profile.dart';
 import 'package:wave_dev/app_screens/listpage.dart';
 import 'package:wave_dev/app_screens/tabs.dart';
 import 'package:wave_dev/app_screens/about.dart';
+import 'package:wave_dev/app_screens/emotion.dart';
 
 class land extends StatefulWidget {
   const land({Key? key}) : super(key: key);
@@ -359,11 +360,9 @@ class _landState extends State<land> with SingleTickerProviderStateMixin {
                                 ),
                                 IconButton(
                                   onPressed: () {
-                                    /* Navigator.of(context).push(
+                                    Navigator.of(context).push(
                                         MaterialPageRoute(
-                                            builder: (context) =>
-                                     Audio_Page()));
-                                     */
+                                            builder: (context) => Mood()));
                                   },
                                   icon: Icon(Icons.play_arrow),
                                   iconSize: 30,
