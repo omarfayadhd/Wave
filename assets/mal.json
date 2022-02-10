@@ -1,0 +1,55 @@
+[
+    {
+      "rating": "4.5",
+      "title":"STAND BY ME",
+      "text":"Skylar Grey",
+      "genre": "Genre",
+      "img": "assets/1917.jpg",
+      "audio": "https://firebasestorage.googleapis.com/v0/b/wave-190e5.appspot.com/o/Skylar%20Grey%20-%20Stand%20By%20Me%20(HQ)-320k.mp3?alt=media&token=19176014-1765-436a-a756-38e685dc7d1b"
+    },
+    {
+      "rating": "4.5",
+      "title":"JUST LIKE THIS",
+      "text":"The Chainsmokers",
+      "genre": "Genre",
+      "img": "assets/aferr.jpg",
+      "audio": "https://firebasestorage.googleapis.com/v0/b/wave-190e5.appspot.com/o/The%2BChainsmokers%2BColdplay%2BSomething%2BJust%2BLike%2BThis%2BLyric.mp3?alt=media&token=8005d209-3fc5-416d-b20c-1dddd77f07ac"
+    },
+
+    {
+      "rating": "4.5",
+      "title":"JUST LIKE THIS",
+      "text":"The Chainsmokers",
+      "genre": "Genre",
+      "img": "assets/infinitywar.webp",
+      "audio": "https://firebasestorage.googleapis.com/v0/b/wave-190e5.appspot.com/o/The%2BChainsmokers%2BColdplay%2BSomething%2BJust%2BLike%2BThis%2BLyric.mp3?alt=media&token=8005d209-3fc5-416d-b20c-1dddd77f07ac"
+    },
+
+    {
+      "rating": "4.5",
+      "title":"JUST LIKE THIS",
+      "text":"The Chainsmokers",
+      "genre": "Genre",
+      "img": "assets/joker.webp",
+      "audio": "https://firebasestorage.googleapis.com/v0/b/wave-190e5.appspot.com/o/The%2BChainsmokers%2BColdplay%2BSomething%2BJust%2BLike%2BThis%2BLyric.mp3?alt=media&token=8005d209-3fc5-416d-b20c-1dddd77f07ac"
+    },
+
+    {
+      "rating": "4.5",
+      "title":"JUST LIKE THIS",
+      "text":"The Chainsmokers",
+      "genre": "Genre",
+      "img": "assets/binks.jpg",
+      "audio": "https://firebasestorage.googleapis.com/v0/b/wave-190e5.appspot.com/o/The%2BChainsmokers%2BColdplay%2BSomething%2BJust%2BLike%2BThis%2BLyric.mp3?alt=media&token=8005d209-3fc5-416d-b20c-1dddd77f07ac"
+    },
+
+    {
+      "rating": "4.5",
+      "title":"JUST LIKE THIS",
+      "text":"The Chainsmokers",
+      "genre": "Genre",
+      "img": "assets/natur.jpg",
+      "audio": "https://firebasestorage.googleapis.com/v0/b/wave-190e5.appspot.com/o/The%2BChainsmokers%2BColdplay%2BSomething%2BJust%2BLike%2BThis%2BLyric.mp3?alt=media&token=8005d209-3fc5-416d-b20c-1dddd77f07ac"
+    }
+    
+  ]

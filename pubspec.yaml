@@ -44,6 +44,7 @@ dependencies:
   image_picker: ^0.8.4+7
   image_picker_for_web: ^2.1.5
   libao: ^0.2.0
+  miniplayer: ^1.0.1
   shared_preferences: ^2.0.12
   shared_preferences_web: ^2.0.3
   spotify: ^0.7.0
@@ -79,7 +80,16 @@ flutter:
     - assets/binks.jpg
     - assets/moana.jpg
     - assets/natur.jpg
+<<<<<<< Updated upstream
     - assets/Github.png
+=======
+    - assets/trending.png
+    - assets/1917.jpg
+    - assets/aferr.jpg
+    - assets/infinitywar.webp
+    - assets/spman.webp
+    - assets/joker.webp
+>>>>>>> Stashed changes
 
 #   - images/a_dot_ham.jpeg
 # An image asset can refer to one or more resolution-specific "variants", see

@@ -1,5 +1,6 @@
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
+import 'package:wave_dev/app_screens/audio_page.dart';
 import 'package:wave_dev/app_screens/picking.dart';
 import 'package:audioplayers/audioplayers.dart';
 
@@ -9,13 +10,17 @@ bool isPlaying = false;
 bool isPaused = false;
 
 class ListPage extends StatefulWidget {
-  const ListPage({Key? key}) : super(key: key);
+  ListPage({
+    Key? key,
+  }) : super(key: key);
 
   @override
   _ListPageState createState() => _ListPageState();
 }
 
 class _ListPageState extends State<ListPage> {
+  bool isPlaying = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,6 +63,7 @@ class _ListPageState extends State<ListPage> {
                   itemBuilder: (context, index) {
                     final Map<String, dynamic> image = snapshot.data![index];
 
+<<<<<<< Updated upstream
                     return Card(
                       margin: const EdgeInsets.symmetric(vertical: 10),
                       child: ListTile(
@@ -71,10 +77,27 @@ class _ListPageState extends State<ListPage> {
                           icon: const Icon(
                             Icons.play_arrow,
                             color: Colors.red,
+=======
+                    return GestureDetector(
+                        onTap: () {},
+                        child: Card(
+                          margin: const EdgeInsets.symmetric(vertical: 10),
+                          child: ListTile(
+                            //tileColor: Colors.blueAccent,
+                            dense: false,
+                            //leading: Image.network(image['url']),
+                            title: Text(image['name']),
+                            subtitle: Text(image['description']),
+                            trailing: IconButton(
+                              onPressed: () => {},
+                              icon: const Icon(
+                                Icons.favorite_border,
+                                color: Colors.red,
+                              ),
+                            ),
+>>>>>>> Stashed changes
                           ),
-                        ),
-                      ),
-                    );
+                        ));
                   },
                 );
               }

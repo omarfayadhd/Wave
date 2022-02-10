@@ -188,6 +188,7 @@ class _landState extends State<land> with SingleTickerProviderStateMixin {
                                         tabs: [
 //The 3 containers in home screen
                                           AppTabs(
+<<<<<<< Updated upstream
                                             color: Colors.white,
                                             text: "Mal",
                                           ),
@@ -198,6 +199,19 @@ class _landState extends State<land> with SingleTickerProviderStateMixin {
                                               color: Colors.red, text: "Eng"),
                                           AppTabs(
                                               color: Colors.yellow,
+=======
+                                            color: Colors.blue.shade300,
+                                            text: "Mal",
+                                          ),
+                                          AppTabs(
+                                              color: Colors.blue.shade300,
+                                              text: "Hindi"),
+                                          AppTabs(
+                                              color: Colors.blue.shade300,
+                                              text: "Eng"),
+                                          AppTabs(
+                                              color: Colors.blue.shade300,
+>>>>>>> Stashed changes
                                               text: "Tamil"),
                                         ],
                                       )),
