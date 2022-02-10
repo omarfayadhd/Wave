@@ -124,4 +124,21 @@ class _Audio_PageState extends State<Audio_Page> {
       ),
     );
   }
+
+  miniPlayer() {
+    Size deviceSize = MediaQuery.of(context).size;
+    return AnimatedContainer(
+      duration: const Duration(milliseconds: 500),
+      color: Colors.blue,
+      width: deviceSize.width,
+      height: 50,
+      child: Row(
+        children: [
+          Image(image: this.widget.audioPath[this.widget.index]["img"]),
+          Text(this.widget.audioPath[this.widget.index]["title"]),
+          IconButton(onPressed: () {}, icon: Icon(Icons.play_arrow))
+        ],
+      ),
+    );
+  }
 }

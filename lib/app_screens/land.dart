@@ -1,14 +1,13 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'dart:convert';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:wave_dev/app_screens/audio_page.dart';
-import 'package:wave_dev/app_screens/creative.dart';
 import 'package:wave_dev/app_screens/login.dart';
 import 'package:wave_dev/app_screens/Profile.dart';
 import 'package:wave_dev/app_screens/listpage.dart';
 import 'package:wave_dev/app_screens/tabs.dart';
-import 'package:wave_dev/app_screens/about.dart';
-import 'package:wave_dev/app_screens/emotion.dart';
 
 class land extends StatefulWidget {
   const land({Key? key}) : super(key: key);
@@ -21,6 +20,7 @@ class land extends StatefulWidget {
 
 class _landState extends State<land> with SingleTickerProviderStateMixin {
   var songs;
+  var malsongs;
 
   late ScrollController _scrollController;
   late TabController _tabController;
@@ -33,12 +33,19 @@ class _landState extends State<land> with SingleTickerProviderStateMixin {
         songs = json.decode(s);
       });
     });
+    await DefaultAssetBundle.of(context)
+        .loadString("assets/mal.json")
+        .then((s) {
+      setState(() {
+        malsongs = json.decode(s);
+      });
+    });
   }
 
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 3, vsync: this);
+    _tabController = TabController(length: 4, vsync: this);
     _scrollController = ScrollController();
     ReadData();
   }
@@ -161,8 +168,10 @@ class _landState extends State<land> with SingleTickerProviderStateMixin {
                                             const EdgeInsets.all(0),
                                         indicatorSize:
                                             TabBarIndicatorSize.label,
-                                        labelPadding:
-                                            const EdgeInsets.only(left: 10),
+
+                                        labelPadding: const EdgeInsets.only(
+                                            left: 20, right: 0),
+                                        labelColor: Colors.black,
                                         controller: _tabController,
                                         isScrollable: true,
                                         indicator: BoxDecoration(
@@ -175,18 +184,21 @@ class _landState extends State<land> with SingleTickerProviderStateMixin {
                                                   blurRadius: 7,
                                                   offset: Offset(0, 0))
                                             ]),
+                                        // ignore: prefer_const_literals_to_create_immutables
                                         tabs: [
 //The 3 containers in home screen
-
                                           AppTabs(
-                                              color: Colors.brown.shade300,
-                                              text: "New"),
+                                            color: Colors.white,
+                                            text: "Mal",
+                                          ),
                                           AppTabs(
-                                              color: Colors.brown.shade500,
-                                              text: "Popular"),
+                                              color: Colors.blue,
+                                              text: "Hindi"),
                                           AppTabs(
-                                              color: Colors.brown.shade400,
-                                              text: "Crush"),
+                                              color: Colors.red, text: "Eng"),
+                                          AppTabs(
+                                              color: Colors.yellow,
+                                              text: "Tamil"),
                                         ],
                                       )),
                                 ))
@@ -241,7 +253,7 @@ class _landState extends State<land> with SingleTickerProviderStateMixin {
                                                                 .circular(10),
                                                         image: DecorationImage(
                                                             image: AssetImage(
-                                                                songs[i]
+                                                                malsongs[i]
                                                                     ["img"]))),
                                                   ),
                                                   SizedBox(
@@ -294,7 +306,7 @@ class _landState extends State<land> with SingleTickerProviderStateMixin {
                                                             color: Colors.red,
                                                           ),
                                                           child: Text(
-                                                            "Genre",
+                                                            "prem",
                                                             style: TextStyle(
                                                                 fontSize: 12,
                                                                 fontFamily:
@@ -332,14 +344,24 @@ class _landState extends State<land> with SingleTickerProviderStateMixin {
                                 title: Text("Content"),
                                 textColor: Colors.white,
                               ),
-                            )
+                            ),
+                            Material(
+                              child: ListTile(
+                                tileColor: Colors.black,
+                                leading: CircleAvatar(
+                                  backgroundColor: Colors.white,
+                                ),
+                                title: Text("Content"),
+                                textColor: Colors.white,
+                              ),
+                            ),
                           ],
                         ),
                       ))
 
                       ////////////////////Check the children after final break up///////////
                       //////////////////////////BOTTOM BUTTON CONTAINER STARTING POINT///////
-
+//////////////////////////////Dont go unless needed///////////////////////////////////////////////////////////////////
                       ,
                       Container(
                         margin: const EdgeInsets.only(top: 0),
@@ -360,9 +382,11 @@ class _landState extends State<land> with SingleTickerProviderStateMixin {
                                 ),
                                 IconButton(
                                   onPressed: () {
-                                    Navigator.of(context).push(
+                                    /* Navigator.of(context).push(
                                         MaterialPageRoute(
-                                            builder: (context) => Mood()));
+                                            builder: (context) =>
+                                     Audio_Page()));
+                                     */
                                   },
                                   icon: Icon(Icons.play_arrow),
                                   iconSize: 30,
@@ -477,19 +501,11 @@ class _landState extends State<land> with SingleTickerProviderStateMixin {
                             ),
                             onPressed: () {},
                           ),
-                          GestureDetector(
-                            onTap: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => AboutPage()));
-                            },
-                            child: const Text("About",
-                                style: TextStyle(
-                                    fontSize: 20.0,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white)),
-                          )
+                          Text("About",
+                              style: TextStyle(
+                                  fontSize: 20.0,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white)),
                         ],
                       ),
                       SizedBox(
