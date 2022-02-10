@@ -75,14 +75,20 @@ flutter:
     - assets/cover_spidy.jpg
     - assets/just.jpg
     - assets/mem.jpg
-    - assets/songs.json
-    - assets/mal.json
     - assets/aladdin.jpg
     - assets/binks.jpg
     - assets/moana.jpg
     - assets/natur.jpg
     - assets/1917.jpg
     - assets/aferr.jpg
+    - assets/atr1.jpg
+    - assets/atr2.jpg
+    - assets/atr3.jpg
+    - assets/atr4.jpg 
+    - json_files/mal.json
+    - json_files/songs.json
+    - json_files/hindi.json
+
     
 #   - images/a_dot_ham.jpeg
 # An image asset can refer to one or more resolution-specific "variants", see

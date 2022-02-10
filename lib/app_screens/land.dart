@@ -4,6 +4,7 @@ import 'dart:convert';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:wave_dev/app_screens/audio_page.dart';
+import 'package:wave_dev/app_screens/emotion.dart';
 import 'package:wave_dev/app_screens/login.dart';
 import 'package:wave_dev/app_screens/Profile.dart';
 import 'package:wave_dev/app_screens/listpage.dart';
@@ -21,23 +22,31 @@ class land extends StatefulWidget {
 class _landState extends State<land> with SingleTickerProviderStateMixin {
   var songs;
   var mal;
+  var hindi;
 
   late ScrollController _scrollController;
   late TabController _tabController;
 
   ReadData() async {
     await DefaultAssetBundle.of(context)
-        .loadString("assets/songs.json")
+        .loadString("json_files/songs.json")
         .then((s) {
       setState(() {
         songs = json.decode(s);
       });
     });
     await DefaultAssetBundle.of(context)
-        .loadString("assets/mal.json")
+        .loadString("json_files/mal.json")
         .then((s) {
       setState(() {
         mal = json.decode(s);
+      });
+    });
+    await DefaultAssetBundle.of(context)
+        .loadString("json_files/hindi.json")
+        .then((s) {
+      setState(() {
+        hindi = json.decode(s);
       });
     });
   }
@@ -188,17 +197,15 @@ class _landState extends State<land> with SingleTickerProviderStateMixin {
                                         tabs: [
 //The 3 containers in home screen
                                           AppTabs(
-                                            color: Colors.white,
+                                            color: Colors.red,
                                             text: "Mal",
                                           ),
                                           AppTabs(
-                                              color: Colors.blue,
-                                              text: "Hindi"),
+                                              color: Colors.red, text: "Hindi"),
                                           AppTabs(
                                               color: Colors.red, text: "Eng"),
                                           AppTabs(
-                                              color: Colors.yellow,
-                                              text: "Tamil"),
+                                              color: Colors.red, text: "Tamil"),
                                         ],
                                       )),
                                 ))
@@ -323,38 +330,357 @@ class _landState extends State<land> with SingleTickerProviderStateMixin {
                                         ),
                                       ));
                                 }),
-                            Material(
-                              child: ListTile(
-                                tileColor: Colors.black,
-                                leading: CircleAvatar(
-                                  backgroundColor: Colors.white,
-                                ),
-                                title: Text(
-                                  "Content",
-                                ),
-                                textColor: Colors.white,
-                              ),
-                            ),
-                            Material(
-                              child: ListTile(
-                                tileColor: Colors.black,
-                                leading: CircleAvatar(
-                                  backgroundColor: Colors.white,
-                                ),
-                                title: Text("Content"),
-                                textColor: Colors.white,
-                              ),
-                            ),
-                            Material(
-                              child: ListTile(
-                                tileColor: Colors.black,
-                                leading: CircleAvatar(
-                                  backgroundColor: Colors.white,
-                                ),
-                                title: Text("Content"),
-                                textColor: Colors.white,
-                              ),
-                            ),
+                            ////////////////////////////////////////
+
+                            ListView.builder(
+                                itemCount: hindi == null ? 0 : hindi.length,
+                                itemBuilder: (_, i) {
+                                  return GestureDetector(
+                                      onTap: () {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    Audio_Page(
+                                                        audioPath: hindi,
+                                                        index: i)));
+                                      },
+                                      child: Container(
+                                        margin: const EdgeInsets.only(
+                                            left: 20,
+                                            right: 20,
+                                            top: 10,
+                                            bottom: 10),
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(10),
+                                              color: Colors.black26,
+                                              boxShadow: [
+                                                BoxShadow(
+                                                  blurRadius: 2,
+                                                  offset: Offset(0, 0),
+                                                  color: Colors.grey
+                                                      .withOpacity(0.2),
+                                                )
+                                              ]),
+                                          child: Container(
+                                              padding: const EdgeInsets.all(8),
+                                              child: Row(
+                                                children: [
+                                                  Container(
+                                                    width: 90,
+                                                    height: 120,
+                                                    decoration: BoxDecoration(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(10),
+                                                        image: DecorationImage(
+                                                            image: AssetImage(
+                                                                hindi[i]
+                                                                    ["img"]))),
+                                                  ),
+                                                  SizedBox(
+                                                    width: 10,
+                                                  ),
+                                                  Column(
+                                                      crossAxisAlignment:
+                                                          CrossAxisAlignment
+                                                              .start,
+                                                      children: [
+                                                        Text(
+                                                          hindi[i]["title"],
+                                                          style: TextStyle(
+                                                              color:
+                                                                  Colors.white,
+                                                              fontFamily:
+                                                                  "Avenir",
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .bold,
+                                                              fontSize: 16),
+                                                        ),
+                                                        SizedBox(
+                                                          height: 5,
+                                                        ),
+                                                        Text(
+                                                          hindi[i]["text"],
+                                                          style: TextStyle(
+                                                              color: Colors
+                                                                  .white60,
+                                                              fontFamily:
+                                                                  "Avenir",
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .normal,
+                                                              fontSize: 13),
+                                                        ),
+                                                        SizedBox(
+                                                          height: 10,
+                                                        ),
+                                                        Container(
+                                                          width: 50,
+                                                          height: 20,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        3),
+                                                            color: Colors.red,
+                                                          ),
+                                                          child: Text(
+                                                            "prem",
+                                                            style: TextStyle(
+                                                                fontSize: 12,
+                                                                fontFamily:
+                                                                    "Avenir",
+                                                                color: Colors
+                                                                    .white),
+                                                          ),
+                                                          alignment:
+                                                              Alignment.center,
+                                                        )
+                                                      ])
+                                                ],
+                                              )),
+                                        ),
+                                      ));
+                                }),
+
+                            ////////////////////////////////////
+                            ListView.builder(
+                                itemCount: mal == null ? 0 : mal.length,
+                                itemBuilder: (_, i) {
+                                  return GestureDetector(
+                                      onTap: () {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    Audio_Page(
+                                                        audioPath: mal,
+                                                        index: i)));
+                                      },
+                                      child: Container(
+                                        margin: const EdgeInsets.only(
+                                            left: 20,
+                                            right: 20,
+                                            top: 10,
+                                            bottom: 10),
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(10),
+                                              color: Colors.black26,
+                                              boxShadow: [
+                                                BoxShadow(
+                                                  blurRadius: 2,
+                                                  offset: Offset(0, 0),
+                                                  color: Colors.grey
+                                                      .withOpacity(0.2),
+                                                )
+                                              ]),
+                                          child: Container(
+                                              padding: const EdgeInsets.all(8),
+                                              child: Row(
+                                                children: [
+                                                  Container(
+                                                    width: 90,
+                                                    height: 120,
+                                                    decoration: BoxDecoration(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(10),
+                                                        image: DecorationImage(
+                                                            image: AssetImage(
+                                                                mal[i]
+                                                                    ["img"]))),
+                                                  ),
+                                                  SizedBox(
+                                                    width: 10,
+                                                  ),
+                                                  Column(
+                                                      crossAxisAlignment:
+                                                          CrossAxisAlignment
+                                                              .start,
+                                                      children: [
+                                                        Text(
+                                                          mal[i]["title"],
+                                                          style: TextStyle(
+                                                              color:
+                                                                  Colors.white,
+                                                              fontFamily:
+                                                                  "Avenir",
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .bold,
+                                                              fontSize: 16),
+                                                        ),
+                                                        SizedBox(
+                                                          height: 5,
+                                                        ),
+                                                        Text(
+                                                          mal[i]["text"],
+                                                          style: TextStyle(
+                                                              color: Colors
+                                                                  .white60,
+                                                              fontFamily:
+                                                                  "Avenir",
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .normal,
+                                                              fontSize: 13),
+                                                        ),
+                                                        SizedBox(
+                                                          height: 10,
+                                                        ),
+                                                        Container(
+                                                          width: 50,
+                                                          height: 20,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        3),
+                                                            color: Colors.red,
+                                                          ),
+                                                          child: Text(
+                                                            "prem",
+                                                            style: TextStyle(
+                                                                fontSize: 12,
+                                                                fontFamily:
+                                                                    "Avenir",
+                                                                color: Colors
+                                                                    .white),
+                                                          ),
+                                                          alignment:
+                                                              Alignment.center,
+                                                        )
+                                                      ])
+                                                ],
+                                              )),
+                                        ),
+                                      ));
+                                }),
+                            ///////////////
+                            ///
+                            ListView.builder(
+                                itemCount: mal == null ? 0 : mal.length,
+                                itemBuilder: (_, i) {
+                                  return GestureDetector(
+                                      onTap: () {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    Audio_Page(
+                                                        audioPath: mal,
+                                                        index: i)));
+                                      },
+                                      child: Container(
+                                        margin: const EdgeInsets.only(
+                                            left: 20,
+                                            right: 20,
+                                            top: 10,
+                                            bottom: 10),
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(10),
+                                              color: Colors.black26,
+                                              boxShadow: [
+                                                BoxShadow(
+                                                  blurRadius: 2,
+                                                  offset: Offset(0, 0),
+                                                  color: Colors.grey
+                                                      .withOpacity(0.2),
+                                                )
+                                              ]),
+                                          child: Container(
+                                              padding: const EdgeInsets.all(8),
+                                              child: Row(
+                                                children: [
+                                                  Container(
+                                                    width: 90,
+                                                    height: 120,
+                                                    decoration: BoxDecoration(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(10),
+                                                        image: DecorationImage(
+                                                            image: AssetImage(
+                                                                mal[i]
+                                                                    ["img"]))),
+                                                  ),
+                                                  SizedBox(
+                                                    width: 10,
+                                                  ),
+                                                  Column(
+                                                      crossAxisAlignment:
+                                                          CrossAxisAlignment
+                                                              .start,
+                                                      children: [
+                                                        Text(
+                                                          mal[i]["title"],
+                                                          style: TextStyle(
+                                                              color:
+                                                                  Colors.white,
+                                                              fontFamily:
+                                                                  "Avenir",
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .bold,
+                                                              fontSize: 16),
+                                                        ),
+                                                        SizedBox(
+                                                          height: 5,
+                                                        ),
+                                                        Text(
+                                                          mal[i]["text"],
+                                                          style: TextStyle(
+                                                              color: Colors
+                                                                  .white60,
+                                                              fontFamily:
+                                                                  "Avenir",
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .normal,
+                                                              fontSize: 13),
+                                                        ),
+                                                        SizedBox(
+                                                          height: 10,
+                                                        ),
+                                                        Container(
+                                                          width: 50,
+                                                          height: 20,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        3),
+                                                            color: Colors.red,
+                                                          ),
+                                                          child: Text(
+                                                            "prem",
+                                                            style: TextStyle(
+                                                                fontSize: 12,
+                                                                fontFamily:
+                                                                    "Avenir",
+                                                                color: Colors
+                                                                    .white),
+                                                          ),
+                                                          alignment:
+                                                              Alignment.center,
+                                                        )
+                                                      ])
+                                                ],
+                                              )),
+                                        ),
+                                      ));
+                                }),
                           ],
                         ),
                       ))
@@ -382,11 +708,9 @@ class _landState extends State<land> with SingleTickerProviderStateMixin {
                                 ),
                                 IconButton(
                                   onPressed: () {
-                                    /* Navigator.of(context).push(
+                                    Navigator.of(context).push(
                                         MaterialPageRoute(
-                                            builder: (context) =>
-                                     Audio_Page()));
-                                     */
+                                            builder: (context) => Mood()));
                                   },
                                   icon: Icon(Icons.play_arrow),
                                   iconSize: 30,

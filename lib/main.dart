@@ -1,10 +1,6 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'app_screens/login.dart';
-import 'app_screens/wav.dart';
-import 'app_screens/signup.dart';
 
 //uyguyguyuyguy
 Future<void> main() async {
