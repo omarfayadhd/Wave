@@ -63,21 +63,6 @@ class _ListPageState extends State<ListPage> {
                   itemBuilder: (context, index) {
                     final Map<String, dynamic> image = snapshot.data![index];
 
-<<<<<<< Updated upstream
-                    return Card(
-                      margin: const EdgeInsets.symmetric(vertical: 10),
-                      child: ListTile(
-                        //tileColor: Colors.blueAccent,
-                        dense: false,
-                        //leading: Image.network(image['url']),
-                        title: Text(image['name']),
-                        subtitle: Text(image['description']),
-                        trailing: IconButton(
-                          onPressed: () => {_playing(image['url'])},
-                          icon: const Icon(
-                            Icons.play_arrow,
-                            color: Colors.red,
-=======
                     return GestureDetector(
                         onTap: () {},
                         child: Card(
@@ -95,7 +80,6 @@ class _ListPageState extends State<ListPage> {
                                 color: Colors.red,
                               ),
                             ),
->>>>>>> Stashed changes
                           ),
                         ));
                   },

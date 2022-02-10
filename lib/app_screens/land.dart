@@ -20,7 +20,7 @@ class land extends StatefulWidget {
 
 class _landState extends State<land> with SingleTickerProviderStateMixin {
   var songs;
-  var malsongs;
+  var mal;
 
   late ScrollController _scrollController;
   late TabController _tabController;
@@ -37,7 +37,7 @@ class _landState extends State<land> with SingleTickerProviderStateMixin {
         .loadString("assets/mal.json")
         .then((s) {
       setState(() {
-        malsongs = json.decode(s);
+        mal = json.decode(s);
       });
     });
   }
@@ -188,7 +188,6 @@ class _landState extends State<land> with SingleTickerProviderStateMixin {
                                         tabs: [
 //The 3 containers in home screen
                                           AppTabs(
-<<<<<<< Updated upstream
                                             color: Colors.white,
                                             text: "Mal",
                                           ),
@@ -199,19 +198,6 @@ class _landState extends State<land> with SingleTickerProviderStateMixin {
                                               color: Colors.red, text: "Eng"),
                                           AppTabs(
                                               color: Colors.yellow,
-=======
-                                            color: Colors.blue.shade300,
-                                            text: "Mal",
-                                          ),
-                                          AppTabs(
-                                              color: Colors.blue.shade300,
-                                              text: "Hindi"),
-                                          AppTabs(
-                                              color: Colors.blue.shade300,
-                                              text: "Eng"),
-                                          AppTabs(
-                                              color: Colors.blue.shade300,
->>>>>>> Stashed changes
                                               text: "Tamil"),
                                         ],
                                       )),
@@ -223,7 +209,7 @@ class _landState extends State<land> with SingleTickerProviderStateMixin {
                           controller: _tabController,
                           children: [
                             ListView.builder(
-                                itemCount: songs == null ? 0 : songs.length,
+                                itemCount: mal == null ? 0 : mal.length,
                                 itemBuilder: (_, i) {
                                   return GestureDetector(
                                       onTap: () {
@@ -232,7 +218,7 @@ class _landState extends State<land> with SingleTickerProviderStateMixin {
                                             MaterialPageRoute(
                                                 builder: (context) =>
                                                     Audio_Page(
-                                                        audioPath: songs,
+                                                        audioPath: mal,
                                                         index: i)));
                                       },
                                       child: Container(
@@ -267,7 +253,7 @@ class _landState extends State<land> with SingleTickerProviderStateMixin {
                                                                 .circular(10),
                                                         image: DecorationImage(
                                                             image: AssetImage(
-                                                                malsongs[i]
+                                                                mal[i]
                                                                     ["img"]))),
                                                   ),
                                                   SizedBox(
@@ -279,7 +265,7 @@ class _landState extends State<land> with SingleTickerProviderStateMixin {
                                                               .start,
                                                       children: [
                                                         Text(
-                                                          songs[i]["title"],
+                                                          mal[i]["title"],
                                                           style: TextStyle(
                                                               color:
                                                                   Colors.white,
@@ -294,7 +280,7 @@ class _landState extends State<land> with SingleTickerProviderStateMixin {
                                                           height: 5,
                                                         ),
                                                         Text(
-                                                          songs[i]["text"],
+                                                          mal[i]["text"],
                                                           style: TextStyle(
                                                               color: Colors
                                                                   .white60,
@@ -445,7 +431,7 @@ class _landState extends State<land> with SingleTickerProviderStateMixin {
 
   void _popup(context) {
     showModalBottomSheet(
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.black87,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         context: context,
         builder: (BuildContext bc) {

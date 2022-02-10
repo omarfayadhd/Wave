@@ -76,21 +76,14 @@ flutter:
     - assets/just.jpg
     - assets/mem.jpg
     - assets/songs.json
+    - assets/mal.json
     - assets/aladdin.jpg
     - assets/binks.jpg
     - assets/moana.jpg
     - assets/natur.jpg
-<<<<<<< Updated upstream
-    - assets/Github.png
-=======
-    - assets/trending.png
     - assets/1917.jpg
     - assets/aferr.jpg
-    - assets/infinitywar.webp
-    - assets/spman.webp
-    - assets/joker.webp
->>>>>>> Stashed changes
-
+    
 #   - images/a_dot_ham.jpeg
 # An image asset can refer to one or more resolution-specific "variants", see
 # https://flutter.dev/assets-and-images/#resolution-aware.
