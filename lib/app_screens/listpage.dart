@@ -74,9 +74,9 @@ class _ListPageState extends State<ListPage> {
                             title: Text(image['name']),
                             subtitle: Text(image['description']),
                             trailing: IconButton(
-                              onPressed: () => {},
+                              onPressed: () => {_playing(image['url'])},
                               icon: const Icon(
-                                Icons.favorite_border,
+                                Icons.play_arrow,
                                 color: Colors.red,
                               ),
                             ),
@@ -111,7 +111,7 @@ final topAppBar = AppBar(
   backgroundColor: const Color.fromRGBO(58, 66, 86, 1.0),
   actions: <Widget>[
     IconButton(
-      icon: Icon(Icons.favorite_outlined),
+      icon: Icon(Icons.favorite),
       onPressed: () {},
     )
   ],

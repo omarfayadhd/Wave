@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_ml_kit/google_ml_kit.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:camera/camera.dart';
 
 class Mood extends StatefulWidget {
   const Mood({Key? key}) : super(key: key);
@@ -14,6 +15,8 @@ class _MoodState extends State<Mood> {
   String moodImagePath = "";
   String moodDetail = "";
   bool isVisible = false;
+  CameraImage? cameraImage;
+  CameraController? cameraController;
 
   FaceDetector detector = GoogleMlKit.vision.faceDetector(
     const FaceDetectorOptions(
@@ -23,7 +26,22 @@ class _MoodState extends State<Mood> {
       enableTracking: true,
     ),
   );
-
+/*
+  loadCamera() {
+    cameraController = CameraController(camera![0], ResolutionPreset.medium);
+    cameraController!.initialize().then((value) {
+      if (!mounted) {
+        return;
+      } else {
+        setState(() {
+          cameraController!.startImageStream((imageStream) {
+            cameraImage = imageStream;
+          });
+        });
+      }
+    });
+  }
+*/
   @override
   void dispose() {
     // TODO: implement dispose
@@ -59,6 +77,19 @@ class _MoodState extends State<Mood> {
             ),
           ),
         ),
+        /* Padding(
+          padding: EdgeInsets.all(20),
+          child: Container(
+            height: MediaQuery.of(context).size.height * 0.7,
+            width: MediaQuery.of(context).size.width,
+            child: !cameraController!.value.isInitialized
+                ? Container()
+                : AspectRatio(
+                    aspectRatio: cameraController!.value.aspectRatio,
+                    child: CameraPreview(cameraController!),
+                  ),
+          ),
+        ),*/
         Center(
           child: TextButton(
             onPressed: () async {

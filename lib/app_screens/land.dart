@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'dart:convert';
+import 'package:camera/camera.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:wave_dev/app_screens/audio_page.dart';
@@ -9,6 +10,7 @@ import 'package:wave_dev/app_screens/login.dart';
 import 'package:wave_dev/app_screens/Profile.dart';
 import 'package:wave_dev/app_screens/listpage.dart';
 import 'package:wave_dev/app_screens/tabs.dart';
+import 'package:wave_dev/app_screens/camera_controll.dart';
 
 class land extends StatefulWidget {
   const land({Key? key}) : super(key: key);
@@ -708,10 +710,15 @@ class _landState extends State<land> with SingleTickerProviderStateMixin {
                                   iconSize: 30,
                                 ),
                                 IconButton(
-                                  onPressed: () {
-                                    Navigator.of(context).push(
+                                  onPressed: () async {
+                                    await availableCameras().then(
+                                      (value) => Navigator.of(context).push(
                                         MaterialPageRoute(
-                                            builder: (context) => Mood()));
+                                            builder: (context) => CameraPage(
+                                                  cameras: value,
+                                                )),
+                                      ),
+                                    );
                                   },
                                   icon: Icon(Icons.play_arrow),
                                   iconSize: 30,
