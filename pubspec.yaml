@@ -85,6 +85,8 @@ flutter:
     - assets/atr2.jpg
     - assets/atr3.jpg
     - assets/atr4.jpg 
+    - assets/vrthn.jpg
+    - assets/minnal.jpg
     - json_files/mal.json
     - json_files/songs.json
     - json_files/hindi.json

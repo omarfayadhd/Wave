@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:wave_dev/app_screens/audio_system.dart';
@@ -13,8 +15,23 @@ class Audio_Page extends StatefulWidget {
   _Audio_PageState createState() => _Audio_PageState();
 }
 
-class _Audio_PageState extends State<Audio_Page> {
+class _Audio_PageState extends State<Audio_Page>
+    with SingleTickerProviderStateMixin {
   late AudioPlayer wavePlayer;
+
+  //late ScrollController _scrollController;
+  var songs;
+  var mal;
+
+  ReadData() async {
+    await DefaultAssetBundle.of(context)
+        .loadString("json_files/songs.json")
+        .then((s) {
+      setState(() {
+        songs = json.decode(s);
+      });
+    });
+  }
 
   @override
   void initState() {
@@ -28,7 +45,7 @@ class _Audio_PageState extends State<Audio_Page> {
     final double screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
-      backgroundColor: Colors.white70,
+      backgroundColor: Colors.black,
       body: Stack(
         children: [
           Positioned(
@@ -37,7 +54,13 @@ class _Audio_PageState extends State<Audio_Page> {
               right: 0,
               height: screenHeight / 3,
               child: Container(
-                color: Colors.black,
+                decoration: BoxDecoration(
+                    // borderRadius: BorderRadius.circular(20),
+
+                    image: DecorationImage(
+                        image: AssetImage(
+                            this.widget.audioPath[this.widget.index]["img"]),
+                        fit: BoxFit.cover)),
               )),
           Positioned(
               top: 0,
@@ -61,6 +84,7 @@ class _Audio_PageState extends State<Audio_Page> {
                 backgroundColor: Colors.transparent,
                 elevation: 0.0,
               )),
+          /////////////////////title box///////////////////
           Positioned(
               left: 0,
               right: 0,
@@ -68,9 +92,11 @@ class _Audio_PageState extends State<Audio_Page> {
               height: screenHeight * 0.36,
               child: Container(
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(40),
-                  color: Colors.white,
-                ),
+                    borderRadius: BorderRadius.circular(40),
+                    border: Border.all(color: Colors.black38, width: 6),
+
+                    //////controlbox/////
+                    color: Colors.white),
                 child: Column(
                   children: [
                     SizedBox(
@@ -96,35 +122,60 @@ class _Audio_PageState extends State<Audio_Page> {
                   ],
                 ),
               )),
+          ///////////////////////circle image//////////////////////
           Positioned(
               top: screenHeight * 0.12,
               left: (screenWidth - 150) / 2,
               right: (screenWidth - 150) / 2,
               height: screenHeight * 0.16,
               child: Container(
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      border: Border.all(color: Colors.white, width: 2),
-                      color: Colors.white70),
                   child: Padding(
-                    padding: const EdgeInsets.all(20),
-                    child: Container(
-                      decoration: BoxDecoration(
-                          // borderRadius: BorderRadius.circular(20),
-                          shape: BoxShape.circle,
-                          border: Border.all(color: Colors.white70, width: 5),
-                          image: DecorationImage(
-                              image: AssetImage(this
-                                  .widget
-                                  .audioPath[this.widget.index]["img"]),
-                              fit: BoxFit.cover)),
-                    ),
-                  )))
-        ],
+                padding: const EdgeInsets.all(0),
+                child: Container(
+                  decoration: BoxDecoration(
+                      // borderRadius: BorderRadius.circular(20),
+                      shape: BoxShape.circle,
+                      border: Border.all(color: Colors.white54, width: 6),
+                      image: DecorationImage(
+                          image: AssetImage(
+                              this.widget.audioPath[this.widget.index]["img"]),
+                          fit: BoxFit.cover)),
+                ),
+              ))),
+          ///////////////////////////////////////////////
+
+          Row(
+            children: [
+              Container(
+                  margin: const EdgeInsets.only(top: 500, left: 15),
+                  child: Text("Waver'S",
+                      style: TextStyle(fontSize: 30, color: Colors.white)))
+            ],
+          ),
+
+          Positioned(
+              child: Container(
+                  margin: const EdgeInsets.only(top: 560, left: 0),
+                  height: 250,
+                  width: 620,
+                  child: PageView.builder(
+                      controller: PageController(viewportFraction: 0.6),
+                      itemCount: 5,
+                      itemBuilder: (_, i) {
+                        return Container(
+                          height: 180,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(15),
+                              image: DecorationImage(
+                                  image: AssetImage("assets/atr1.jpg"))),
+                        );
+                      })))
+        ], //
       ),
     );
   }
 
+/*
   miniPlayer() {
     Size deviceSize = MediaQuery.of(context).size;
     return AnimatedContainer(
@@ -140,5 +191,6 @@ class _Audio_PageState extends State<Audio_Page> {
         ],
       ),
     );
-  }
+  }*/
+
 }

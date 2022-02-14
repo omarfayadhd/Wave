@@ -1,4 +1,5 @@
-import 'package:flutter/cupertino.dart';
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, unnecessary_this
+
 import 'package:flutter/material.dart';
 
 class AppTabs extends StatelessWidget {
@@ -18,12 +19,12 @@ class AppTabs extends StatelessWidget {
       ),
       alignment: Alignment.center,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(12),
           color: this.color,
           boxShadow: [
             BoxShadow(
-              color: Colors.grey.withOpacity(0.3),
-              blurRadius: 7,
+              color: Colors.blue.withOpacity(0.3),
+              blurRadius: 360,
               offset: Offset(0, 0),
             )
           ]),

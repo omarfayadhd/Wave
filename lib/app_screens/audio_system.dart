@@ -135,7 +135,7 @@ class _AusioSysState extends State<AusioSys> {
   Widget btnLoop() {
     return IconButton(
       icon: ImageIcon(
-        AssetImage('assets/Loop.png'),
+        AssetImage('assets/loop.png'),
         size: 15,
       ),
       onPressed: () {
