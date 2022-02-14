@@ -1,0 +1,51 @@
+[
+{
+      
+    "title":"Chaka Chaka",
+    "text":"Shraya Goshal",
+    "genre": "Hindi",
+    "img": "assets/minnal.jpg",
+    "audio": "https://firebasestorage.googleapis.com/v0/b/wave-190e5.appspot.com/o/Songs%2FHindi%2FChaka-Chak-MassTamilan.fm.mp3?alt=media&token=96c02c30-8719-4f4c-a1d2-0f96c46b61b9"
+  },
+  {
+    
+      "title":"Garda",
+      "text":"Daler Mehndi",
+      "genre": "Hindi",
+      "img": "assets/1917.jpg",        
+      "audio": "https://firebasestorage.googleapis.com/v0/b/wave-190e5.appspot.com/o/Songs%2FHindi%2FGarda-MassTamilan.fm.mp3?alt=media&token=eefac3c6-c06e-48c4-aeb1-4b06f748831d"
+    },
+    {
+    
+      "title":"Little-Little",
+      "text":"Danush",
+      "genre": "Hindi",
+      "img": "assets/vrthn.jpg",
+      "audio": "https://firebasestorage.googleapis.com/v0/b/wave-190e5.appspot.com/o/Songs%2FHindi%2FLittle-Little-MassTamilan.fm.mp3?alt=media&token=bcf88151-051c-4cea-8280-15ff12736625"
+    },
+    {
+    
+      "title":"Rait-Zara-Si",
+      "text":"Shashaa Tirupati, Arijit Singh",
+      "genre": "Hindi",
+      "img": "assets/aferr.jpg",
+      "audio": "https://firebasestorage.googleapis.com/v0/b/wave-190e5.appspot.com/o/Songs%2FHindi%2FRait-Zara-Si-MassTamilan.fm.mp3?alt=media&token=ed1a030d-4af0-4d35-b8ae-f1ed5e1e194f"
+    },
+    {
+    
+      "title":"Tere-Rang",
+      "text":"Haricharan, Shreya Ghoshal",
+      "genre": "Hindi",
+      "img": "assets/atr2.jpg",
+      "audio": "https://firebasestorage.googleapis.com/v0/b/wave-190e5.appspot.com/o/Songs%2FHindi%2FTere-Rang-MassTamilan.fm.mp3?alt=media&token=97f15442-fc1f-43a7-b825-2c4d26c507c4"
+    },
+    {
+    
+      "title":"Atrangi Re",
+      "text":"Shraya Gohal",
+      "genre": "Hindi",
+      "img": "assets/atr3.jpg",
+      "audio": "https://firebasestorage.googleapis.com/v0/b/wave-190e5.appspot.com/o/Songs%2FHindi%2FTumhein-Mohabbat-MassTamilan.fm.mp3?alt=media&token=23b679c1-cab0-4ae4-86d6-6bb687ca561d"
+    }
+ 
+]
