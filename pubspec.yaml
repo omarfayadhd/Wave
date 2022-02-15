@@ -89,9 +89,15 @@ flutter:
     - assets/atr4.jpg 
     - assets/vrthn.jpg
     - assets/minnal.jpg
+    - assets/home.jpg
+    - assets/Kurup_(film).jpeg
+    - assets/malik.jpg
     - json_files/mal.json
     - json_files/songs.json
     - json_files/hindi.json
+    - json_files/wavers.json
+    
+
 
     
 #   - images/a_dot_ham.jpeg

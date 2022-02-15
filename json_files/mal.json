@@ -1,55 +1,55 @@
 [
     {
       "rating": "4.5",
-      "title":"STAND BY ME",
-      "text":"Skylar Grey",
+      "title":"Tee Minnal",
+      "text":"Sushin Shyam",
       "genre": "Genre",
-      "img": "assets/1917.jpg",
-      "audio": "https://firebasestorage.googleapis.com/v0/b/wave-190e5.appspot.com/o/Skylar%20Grey%20-%20Stand%20By%20Me%20(HQ)-320k.mp3?alt=media&token=19176014-1765-436a-a756-38e685dc7d1b"
+      "img": "assets/minnal.jpg",
+      "audio": "https://firebasestorage.googleapis.com/v0/b/wave-190e5.appspot.com/o/Songs%2FMalayalam%2FThee-Minnal-MassTamilan.fm.mp3?alt=media&token=1607ca18-6e18-43be-895d-94ab395102c3"
     },
     {
       "rating": "4.5",
-      "title":"JUST LIKE THIS",
-      "text":"The Chainsmokers",
+      "title":"Putiyoru Patahyil",
+      "text":"Nazriya Nazim",
       "genre": "Genre",
-      "img": "assets/aferr.jpg",
-      "audio": "https://firebasestorage.googleapis.com/v0/b/wave-190e5.appspot.com/o/The%2BChainsmokers%2BColdplay%2BSomething%2BJust%2BLike%2BThis%2BLyric.mp3?alt=media&token=8005d209-3fc5-416d-b20c-1dddd77f07ac"
-    },
-
-    {
-      "rating": "4.5",
-      "title":"JUST LIKE THIS",
-      "text":"The Chainsmokers",
-      "genre": "Genre",
-      "img": "assets/cover_spidy.jpg",
-      "audio": "https://firebasestorage.googleapis.com/v0/b/wave-190e5.appspot.com/o/The%2BChainsmokers%2BColdplay%2BSomething%2BJust%2BLike%2BThis%2BLyric.mp3?alt=media&token=8005d209-3fc5-416d-b20c-1dddd77f07ac"
+      "img": "assets/vrthn.jpg",
+      "audio": "https://firebasestorage.googleapis.com/v0/b/wave-190e5.appspot.com/o/Songs%2FMalayalam%2FPuthiyoru%2BPathayil%2BVarathan%2BLyric%2BVideo%2BFahadh%2BFaasil%2BAmal%2BNeerad%2BNazriya%2BNazim%2BANP%2BFFF.mp3?alt=media&token=717a3360-c55c-49e9-a48c-36c2327432de"
     },
 
     {
       "rating": "4.5",
-      "title":"JUST LIKE THIS",
-      "text":"The Chainsmokers",
+      "title":"Theerame",
+      "text":"K S Chithra",
       "genre": "Genre",
-      "img": "assets/moana.jpg",
-      "audio": "https://firebasestorage.googleapis.com/v0/b/wave-190e5.appspot.com/o/The%2BChainsmokers%2BColdplay%2BSomething%2BJust%2BLike%2BThis%2BLyric.mp3?alt=media&token=8005d209-3fc5-416d-b20c-1dddd77f07ac"
+      "img": "assets/malik.jpg",
+      "audio": "https://firebasestorage.googleapis.com/v0/b/wave-190e5.appspot.com/o/Songs%2FMalayalam%2FTheerame-MassTamilan.fm.mp3?alt=media&token=0ad3e370-ae7a-4e5d-9d11-f4fc17f95a62"
     },
 
     {
       "rating": "4.5",
-      "title":"JUST LIKE THIS",
-      "text":"The Chainsmokers",
+      "title":"Vanam Thandi",
+      "text":"Shenbagaraj",
       "genre": "Genre",
-      "img": "assets/binks.jpg",
-      "audio": "https://firebasestorage.googleapis.com/v0/b/wave-190e5.appspot.com/o/The%2BChainsmokers%2BColdplay%2BSomething%2BJust%2BLike%2BThis%2BLyric.mp3?alt=media&token=8005d209-3fc5-416d-b20c-1dddd77f07ac"
+      "img": "assets/Kurup_(film).jpeg",
+      "audio": "https://firebasestorage.googleapis.com/v0/b/wave-190e5.appspot.com/o/Songs%2FMalayalam%2FVanam-Thaandi-MassTamilan.fm.mp3?alt=media&token=189e5cfd-4b64-4273-b0fc-6193952103c7"
     },
 
     {
       "rating": "4.5",
-      "title":"JUST LIKE THIS",
-      "text":"The Chainsmokers",
+      "title":"Ra Thinkalin",
+      "text":"Vijay Yeshudas",
       "genre": "Genre",
-      "img": "assets/natur.jpg",
-      "audio": "https://firebasestorage.googleapis.com/v0/b/wave-190e5.appspot.com/o/The%2BChainsmokers%2BColdplay%2BSomething%2BJust%2BLike%2BThis%2BLyric.mp3?alt=media&token=8005d209-3fc5-416d-b20c-1dddd77f07ac"
+      "img": "assets/home.jpg",
+      "audio": "https://firebasestorage.googleapis.com/v0/b/wave-190e5.appspot.com/o/Songs%2FMalayalam%2FRa-Thinkalin-MassTamilan.fm.mp3?alt=media&token=ae655326-1ca9-4573-b898-4b6fb4a3f695"
+    },
+
+    {
+      "rating": "4.5",
+      "title":"Kurup",
+      "text":"Shenbagaraj",
+      "genre": "Genre",
+      "img": "assets/Kurup_(film).jpeg",
+      "audio": "https://firebasestorage.googleapis.com/v0/b/wave-190e5.appspot.com/o/Songs%2FMalayalam%2FVanam-Thaandi-MassTamilan.fm.mp3?alt=media&token=189e5cfd-4b64-4273-b0fc-6193952103c7"
     }
     
   ]

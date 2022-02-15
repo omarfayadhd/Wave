@@ -22,8 +22,17 @@ class _Audio_PageState extends State<Audio_Page>
   //late ScrollController _scrollController;
   var songs;
   var mal;
+  var wavers;
 
   ReadData() async {
+    await DefaultAssetBundle.of(context)
+        .loadString("json_files/wavers.json")
+        .then((s) {
+      setState(() {
+        wavers = json.decode(s);
+      });
+    });
+
     await DefaultAssetBundle.of(context)
         .loadString("json_files/songs.json")
         .then((s) {
@@ -147,29 +156,27 @@ class _Audio_PageState extends State<Audio_Page>
           Row(
             children: [
               Container(
-                  margin: const EdgeInsets.only(top: 500, left: 15),
+                  margin: const EdgeInsets.only(top: 500, left: 19),
                   child: Text("Waver'S",
                       style: TextStyle(fontSize: 30, color: Colors.white)))
             ],
           ),
 
-          Positioned(
-              child: Container(
-                  margin: const EdgeInsets.only(top: 560, left: 0),
-                  height: 250,
-                  width: 620,
-                  child: PageView.builder(
-                      controller: PageController(viewportFraction: 0.6),
-                      itemCount: 5,
-                      itemBuilder: (_, i) {
-                        return Container(
-                          height: 180,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(15),
-                              image: DecorationImage(
-                                  image: AssetImage("assets/atr1.jpg"))),
-                        );
-                      })))
+          Container(
+              margin: const EdgeInsets.only(top: 560, left: 0),
+              height: 280,
+              child: PageView.builder(
+                  controller: PageController(viewportFraction: 0.6),
+                  //itemCount: wavers == null ? 0 : wavers.length,
+                  itemBuilder: (_, i) {
+                    return Container(
+                        height: 180,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(0),
+                          image: DecorationImage(
+                              image: AssetImage("assets/atr1.jpg")),
+                        ));
+                  }))
         ], //
       ),
     );
